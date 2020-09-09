@@ -1,6 +1,12 @@
 Road to OSWE
-- Understand about python,perl,php,java,.net > understand this first dude
-- Write a script with python or perl to existing vulnerability > you need to do this 
+These steps are my daily work flow for OSWE journey
+- Understand about python,perl,php,java,.net, javascript
+  - [x] Python create a script for timebasesqli with python
+  - [ ] perl create a web scrapping script
+  - [ ] JavaScript / Node js / Angular 
+  - [ ] Java create vulnerable java program / review CVE
+  - [ ] php create a vulnerable program / review CVEs
+  - [ ] dot net create a vulnerable web / review CVEs and analyse
 - Understand php vulnerabilities and get fuck them
 - Understand java vulnerabilities
 - Understand .net vulnerabilities
