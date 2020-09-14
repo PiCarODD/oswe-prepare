@@ -34,7 +34,7 @@
 	```
 * Playground https://github.com/NickstaDB/DeserLab
 
-**Refrences**
+**References**
 - https://www.slideshare.net/frohoff1/deserialize-my-shorts-or-how-i-learned-to-start-worrying-and-hate-java-object-deserialization
 - https://nickbloor.co.uk/2017/08/13/attacking-java-deserialization/
 
