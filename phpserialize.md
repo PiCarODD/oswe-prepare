@@ -1,3 +1,4 @@
+```
 * Due to serialize() and deserialize() functions
 * to recontruct object 
 	- b:<i>; where b mean boolean and <i> can be 0 or 1
@@ -15,6 +16,7 @@
 	- __wakeUp()
 * PHP Magic methods https://culttt.com/2014/04/16/php-magic-methods/
 * PHPgcc which can generate payload for deserialization attack like ysoserial https://github.com/ambionics/phpggc
+```
 **References**
 https://www.exit.wtf/vrd/2019/04/04/Insecure_Deserialization.html
 https://portswigger.net/web-security/deserialization/exploiting
