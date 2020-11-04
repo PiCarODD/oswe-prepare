@@ -1,15 +1,15 @@
 ## ငါရေးချင်တာရေးတယ် 
 ## Evasion ကိုယ်ဖျောက်ချင်း ဟန်ဆောင်ချင်း
 * ပုံမှန် အားဖြင့် ကိုယ် ဖျေက်မယ့် နည်းတေ များကြီးရှိ တယ် ပထမ တစ်ခုအနေနဲ့ base64
-၁. payload ကို base64 encode လုပ်ပီးကိုယ် ဖျေက်မယ်ဆိုရင် backend မှာ decode ပြန် လုပ်တဲ့ function သုံးထား ရင် အဆင် ပြေတယ်.တကယ်လို့သုံးမထားဘူးဆို ရင် payload inject လုပ် တဲ့အခါ frontend မှာ ကိုယ်တိုင် ထည့်ပေးဖို့လိုလာတယ် . encode လုပ်  function တေ ကတော့ 
-* [].constructor.constructor("code")()
-* atob()
-* setTimeout("code") #all browsers
-* setInterval("code") #all browsers
-* setImmediate("code") #IE 10+
-* Function("code")() #all browsers
-၂. URI အရှည် ကောက် သိလား မသိ ရင် ဖတ် Uniform (local and remote), Resource Identifier အောက်ကပုံကိုြကည့်ရင် ပိုသိသာမယ် 
-![alt text](http://github.com/images/uri-vs-url-vs-urn.jpg). facebook ပေါ်မှာ pornhub link တေ တချို့ website တွေ ပို့မရတာ ကြုံဖူးတယ် မလား အဲ့ အခါ ချိဖ တို့ URL Shortening ကိုသုံးပီး ကျော် တယ် မလား အရင် က အဲ့ attack ကခေတ်စားခဲ့တယ် ခု တချို့နေရာတွေမာပဲသုံးလို့ရတော့ တယ်. နောက် တစ် နည်းက URL authority Obfuscation အဲ့ကောင် ကို နားလည် ဖိုက အောက် က ကောင် ကို ကြည့် 
+၁.payload ကို base64 encode လုပ်ပီးကိုယ် ဖျေက်မယ်ဆိုရင် backend မှာ decode ပြန် လုပ်တဲ့ function သုံးထား ရင် အဆင် ပြေတယ်.တကယ်လို့သုံးမထားဘူးဆို ရင် payload inject လုပ် တဲ့အခါ frontend မှာ ကိုယ်တိုင် ထည့်ပေးဖို့လိုလာတယ် . encode လုပ်  function တေ ကတော့ 
+	* [].constructor.constructor("code")()
+	* atob()
+	* setTimeout("code") #all browsers
+	* setInterval("code") #all browsers
+	* setImmediate("code") #IE 10+
+	* Function("code")() #all browsers
+၂.URI အရှည် ကောက် သိလား မသိ ရင် ဖတ် Uniform (local and remote), Resource Identifier အောက်ကပုံကိုြကည့်ရင် ပိုသိသာမယ် 
+![alt text](https://github.com/PiCarODD/oswe-prepare/blob/master/images/uri-vs-url-vs-urn.jpg). facebook ပေါ်မှာ pornhub link တေ တချို့ website တွေ ပို့မရတာ ကြုံဖူးတယ် မလား အဲ့ အခါ ချိဖ တို့ URL Shortening ကိုသုံးပီး ကျော် တယ် မလား အရင် က အဲ့ attack ကခေတ်စားခဲ့တယ် ခု တချို့နေရာတွေမာပဲသုံးလို့ရတော့ တယ်. နောက် တစ် နည်းက URL authority Obfuscation အဲ့ကောင် ကို နားလည် ဖိုက အောက် က ကောင် ကို ကြည့် 
 ```         
 foo://example.com:8042/over/there?name=ferret#nose
 \_/   \______________/\_________/ \_________/ \__/
